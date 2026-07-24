@@ -1,16 +1,15 @@
-## Hi there 👋
+# Hi, I'm Ella Scheuermann 👋
 
-<!--
-**ella-scheuermann/ella-scheuermann** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm currently finishing my final semester at the University of Hawaiʻi at Mānoa, pursuing a double major in Marketing and Finance. Through internships, coursework, travel, and hands-on projects, I've developed a passion for tackling challenges, learning new skills, and creating meaningful work that makes an impact.
 
-Here are some ideas to get you started:
+Welcome to my professional portfolio. This repository showcases my academic projects, financial models, business analyses, and professional work as I continue building my career.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Areas of Interest
+
+- Financial Analysis
+- Marketing & Communications
+- Business Strategy
+- Data Analytics
+- AI-Assisted Workflows
+
+Thanks for visiting!

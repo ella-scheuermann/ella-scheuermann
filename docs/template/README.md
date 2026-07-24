@@ -1,1 +1,3 @@
-This folder references the instructor's canonical templates instead of storing copies.
+# Templates
+
+This folder serves as a placeholder for references to the canonical course templates provided by the instructor.

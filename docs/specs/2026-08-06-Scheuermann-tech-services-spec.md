@@ -16,7 +16,7 @@ The workbook will use the following named ranges as required inputs. **Unless ot
 | S0_in | Spot exchange rate | **1.1522 (indicative – replaced with live market data at Stage 4)** | USD per EUR | Yahoo Finance (EUR/USD) |
 | F0_in | One-year forward exchange rate | **1.16924 (indicative – replaced with live market data at Stage 4)** | USD per EUR | Forward FX market quote |
 | R_USD | U.S. annual interest rate | **4.059% (indicative – replaced with live market data at Stage 4)** | Annual % | U.S. Treasury 1-Year Yield |
-| R_FC | Euro annual interest rate | **TBD (indicative – replaced with live market data at Stage 4)** | Annual % | European Central Bank |
+| R_FC | Euro annual interest rate | **2.576 (indicative – replaced with live market data at Stage 4)** | Annual % | European Central Bank |
 | K_PUT | Put option strike price | **1.1522 (indicative – replaced with live market data at Stage 4)** | USD per EUR | Option market quote |
 | K_CALL | Call option strike price | **1.1522 (indicative – replaced with live market data at Stage 4)** | USD per EUR | Option market quote |
 | PREM_PUT | Put option premium | **0.017 (indicative – replaced with live market data at Stage 4)** | USD per EUR | Instructor scenario / option market |

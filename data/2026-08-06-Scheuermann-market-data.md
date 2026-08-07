@@ -62,6 +62,17 @@ The live values were entered only into the named-range input cells. No formulas 
 
 ## FX Hedging Lab Cross-Check
 
-The live market inputs were entered into the FX Hedging Lab.
+The live market inputs were entered into the FX Hedging Lab using:
 
-The workbook calculations for the forward hedge, money market hedge, and option hedge agreed with the lab outputs within normal rounding differences. No discrepancies requiring structural changes were identified.
+- Spot rate (S0_in): 1.1522 USD/EUR
+- Forward rate (F0_in): 1.1686 USD/EUR (CIP-implied)
+- USD interest rate (R_USD): 4.04%
+- EUR interest rate (R_FC): 2.58%
+- Foreign currency receivable (FC_AMT): €12,500,000
+- Days to settlement (T_DAYS): 360
+- Put strike (K_PUT): 1.1522
+- Call strike (K_CALL): 1.1522
+- Put premium (PREM_PUT): 0.017
+- Call premium (PREM_CALL): 0.022
+
+The FX Hedging Lab produced a forward hedge value of approximately $14,607,500 and a money market hedge value of approximately $14,607,488. The $12 difference is attributable to rounding, and the lab confirmed that covered interest parity holds. These results were consistent with my workbook, and no structural discrepancies were identified.

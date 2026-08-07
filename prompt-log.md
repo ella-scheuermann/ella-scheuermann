@@ -285,5 +285,19 @@ I used ChatGPT to help create and edit the prompt before submitting it to Claude
 Claude generated the first version of the Excel workbook from my committed Stage 2 specification. I downloaded the workbook, reviewed it manually in Excel, tested the named ranges, checked that calculated cells used formulas, changed `S0_in` to confirm that the sensitivity table updated, and documented the results in a separate build audit. I used ChatGPT to help develop and edit the prompt, but I reviewed the workbook and completed the final audit myself.
 
 ---
+## 2026-08-06 — Stage 4: Market Data Population
+
+**Tool:** ChatGPT (GPT-5.5)
+
+**Prompt:**
+Help me organize the Stage 4 market-data memo, cross-reference my retrieved market values, calculate the Covered Interest Parity (CIP) implied forward rate, and verify that my workbook outputs matched the FX Hedging Lab.
+
+**Draft → Revision Example:**
+The initial AI draft provided a basic structure for the market-data memo. I revised it by adding my own retrieved market values, documenting the sources and retrieval timestamps, including the rationale for my interest rate selections, and incorporating the results of the FX Hedging Lab cross-check.
+
+**How I used it:**
+ChatGPT helped create the initial draft of the market-data memo, cross-reference my retrieved market data, calculate the CIP-implied forward rate, and organize the required documentation. I independently located the market data, verified the sources, entered the live values into my workbook, and confirmed the results using the FX Hedging Lab.
+
+---
 
 *This log will be updated throughout the semester.*

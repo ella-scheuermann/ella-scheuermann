@@ -1,93 +1,102 @@
-# Build Audit – Phase 3
-
-**Course:** FIN 321 – International Business Finance  
+# Build Audit
+**Project:** FX Hedging Model – U.S. Tech Services Firm  
 **Student:** Ella Scheuermann  
-**Date:** August 6, 2026  
-**Workbook:** `2026-08-06-scheuermann-tech-services-model.xlsx`
-
----
+**Date:** 2026-08-06
 
 ## Audit Objective
 
-Review the completed workbook against the Phase 2 specification to verify that calculations, named ranges, formulas, and validation checks function correctly.
+The workbook was audited against the committed Stage 2 specification after the initial build. The purpose of this review was to verify contract compliance, identify any structural or modeling weaknesses, and confirm that the workbook satisfies the required validation rules before submission.
 
 ---
 
-## Findings
+# Finding 1 – Forward vs. Money-Market Validation Tolerance
 
-### Finding 1 – Named Ranges
+**Test Performed**
 
-**Test Performed:**
-Opened **Formulas → Name Manager** and verified that the required named ranges exist.
+Reviewed the Forward-versus-Money-Market proceeds validation on the Money Market Hedge worksheet to determine whether the tolerance was appropriately sized for a covered-interest-parity (CIRP) model.
 
-**Result:**
-PASS
+**Result**
 
-**Notes:**
-The workbook includes the required named ranges, including:
+**Issue identified and corrected.**
 
-- `FC_AMT`
-- `S0_in`
-- `F0_in`
-- `R_USD`
-- `R_FC`
-- `K_PUT`
-- `K_CALL`
-- `PREM_PUT`
-- `PREM_CALL`
-- `T_DAYS`
+**Notes**
+
+The original workbook allowed a tolerance of approximately **$15,000**, which was large enough to allow meaningful modeling differences to still display **PASS**. The revised Stage 2 specification tightened this validation to a tolerance of **±$100**, consistent with the expected precision of a properly functioning CIRP model.
+
+After rebuilding the workbook using the revised specification, the validation now reports **REVIEW** when the Stage 2 indicative inputs produce a difference larger than $100. This behavior is expected because the indicative placeholder forward rate is not perfectly consistent with the covered-interest-parity-implied forward. The validation therefore provides meaningful feedback rather than masking potential issues.
 
 ---
 
-### Finding 2 – Formula Integrity
+# Finding 2 – Sensitivity Analysis Formula Integrity
 
-**Test Performed:**
-Reviewed calculation worksheets to verify that calculated values are generated using Excel formulas rather than manually entered numbers.
+**Test Performed**
 
-**Result:**
-PASS
+Inspected every row of the Sensitivity Analysis worksheet, including the scenario index, percentage changes, ending spot rates, hedge proceeds, and chart source data.
 
-**Notes:**
-Key calculations use formulas throughout the workbook, including the Forward Hedge, Money Market Hedge, Option Hedge, and Sensitivity Analysis worksheets.
+**Result**
 
----
+**Issue identified and corrected.**
 
-### Finding 3 – Sensitivity Analysis
+**Notes**
 
-**Test Performed:**
-Changed the value of the named input `S0_in` and confirmed that the sensitivity table recalculated automatically.
+The original build contained manually entered scenario numbers and percentage increments within the sensitivity grid. While the hedge calculations updated correctly, portions of the table were not fully formula-driven.
 
-**Result:**
-PASS
-
-**Notes:**
-The sensitivity table references `S0_in`, allowing all scenarios to update automatically whenever the spot exchange rate changes.
+The revised specification now requires the entire sensitivity table—including scenario numbering, percentage changes, ending spot rates, hedge proceeds, and chart data—to be generated using Excel formulas. The rebuilt workbook satisfies this requirement, allowing the analysis to remain scalable and reducing the risk of inconsistencies if the scenario range changes in the future.
 
 ---
 
-### Finding 4 – Specification Validation Checks
+# Finding 3 – Option Hedge Scenario Consistency
 
-**Test Performed:**
-Verified that the workbook's internal validation checks from the Phase 2 specification operate correctly.
+**Test Performed**
 
-**Result:**
-PASS
+Compared the manually entered **S_T** scenario on the Option Hedge worksheet with the formula-driven **S_T** values used in the Sensitivity Analysis worksheet.
 
-**Notes:**
-The workbook includes validation checks for model consistency, including forward pricing, money market calculations, and scenario analysis. No errors were identified during testing.
+**Result**
 
----
+**Control strengthened.**
 
-### Finding 5 – Minor Recommendation
+**Notes**
 
-**Observation:**
-The Option Hedge worksheet uses a manually entered future spot rate (`S_T`) for scenario analysis.
+The original workbook used a manually entered illustrative **S_T** value for the Option Hedge calculations. Although appropriate for demonstrating a single payoff scenario, this created the possibility that the Option Hedge worksheet and Sensitivity Analysis could produce different results if equivalent spot-rate scenarios were entered.
 
-**Notes:**
-This is appropriate for evaluating different exchange rate outcomes.
+The revised specification now requires consistency between these calculations. The rebuilt workbook verifies that when the same ending spot rate is used, both worksheets produce identical option payoff results.
 
 ---
 
-## Overall Assessment
+# Finding 4 – Dynamic Model Recalculation
 
-The workbook successfully meets the Phase 3 build requirements. Required named ranges are present, calculations are implemented using formulas, the sensitivity analysis updates dynamically when the spot rate input changes, and the validation checks pass. No material issues were identified during the audit. 
+**Test Performed**
+
+Changed the named-range input **S0_in** and observed the behavior of every dependent worksheet, including the Forward Hedge, Money Market Hedge, Option Hedge, Sensitivity Analysis, validation checks, and sensitivity chart.
+
+**Result**
+
+**PASS**
+
+**Notes**
+
+All dependent calculations updated automatically without requiring manual intervention. Returning **S0_in** to its original value restored the workbook to its initial results, confirming that the workbook is fully driven by formulas rather than static values.
+
+---
+
+# Finding 5 – Named Ranges and Formula Integrity
+
+**Test Performed**
+
+Reviewed the workbook using Excel Name Manager and inspected calculated cells across all worksheets.
+
+**Result**
+
+**PASS**
+
+**Notes**
+
+All ten required named ranges exist and point to the intended yellow input cells. Calculated outputs, intermediate calculations, validation results, sensitivity values, and chart source data are generated by Excel formulas rather than manually entered values. No Excel formula errors (`#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, etc.) were identified during the final audit.
+
+---
+
+# Overall Audit Conclusion
+
+The audit identified two substantive modeling improvements and one control enhancement beyond simple contract compliance. The validation tolerance for the Forward-versus-Money-Market proceeds check was tightened to provide a more meaningful control, the Sensitivity Analysis was rebuilt as a fully formula-driven model, and consistency between the Option Hedge worksheet and Sensitivity Analysis was strengthened.
+
+Following these revisions, the workbook satisfies the revised Stage 2 specification. Required named ranges are correctly implemented, calculations are formula-driven, validation checks operate as intended, sensitivity analysis recalculates dynamically, and the workbook contains no Excel formula errors. The resulting model is more robust, auditable, and consistent with the project requirements.

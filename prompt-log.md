@@ -300,4 +300,53 @@ ChatGPT helped create the initial draft of the market-data memo, cross-reference
 
 ---
 
-*This log will be updated throughout the semester.*
+## 2026-08-15 — Stage 5: Independent LLM Validation
+
+**Tools:** Claude, ChatGPT (GPT-5.5)
+
+### Claude Prompt
+
+I have attached two documents:
+
+1. My Stage 2 FX Hedging Model Specification.
+2. My Stage 4 Market Data Memo.
+
+Treat these two documents as the complete project documentation. Do not assume you have access to any workbook or prior conversation.
+
+Using only the information contained in these two documents, independently complete the FX hedge analysis.
+
+Please:
+
+1. Calculate the following hedge outcomes:
+   - Unhedged position
+   - Forward hedge
+   - Money market hedge (show all three steps)
+   - Put option hedge
+   - Call option comparison
+
+2. Evaluate the hedge outcomes for at least three ending spot-rate (S_T) scenarios, including:
+   - EUR depreciation
+   - No material change
+   - EUR appreciation
+
+3. Recommend the most appropriate hedging strategy for the U.S. Tech Services Firm and explain your reasoning based on the calculated results, risk exposure, and trade-offs among certainty, flexibility, and cost.
+
+4. Clearly show all calculations, assumptions, and formulas used.
+
+If any information required to perform the analysis is missing or ambiguous, identify the specific limitation and explain how it affects your analysis rather than making unsupported assumptions.
+
+Do not ask me questions or request additional information. Base your entire response solely on the two attached documents.
+
+### ChatGPT Prompt
+
+Help me compare the independent Claude analysis against my completed workbook, verify the forward hedge, money-market hedge, and option calculations by hand, organize the validation report, write the executive recommendation memo, and review the specification retrospective for clarity while preserving my own analysis and conclusions.
+
+**Draft → Revision Example:**
+
+Claude independently completed the hedge analysis using only the Stage 2 specification and Stage 4 market-data memo. I then compared Claude's calculations with my completed workbook and manually verified the forward hedge, money-market hedge, and option calculations. ChatGPT assisted with organizing the comparison tables, formatting the validation document, refining the executive recommendation memo, and improving the clarity of the retrospective without changing the underlying financial analysis.
+
+**How I used it:**
+
+Claude served as the independent validation model required by Stage 5 and generated the hedge analysis without access to my workbook. I reviewed and verified its results against my Excel model, completed the required hand calculations, and diagnosed any differences. Afterward, I used ChatGPT to help organize the validation report, improve the presentation of the recommendation memo, and polish the written documentation. All financial conclusions, calculations, and final submission materials were reviewed and verified by me before submission.
+
+---
